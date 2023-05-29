@@ -158,7 +158,7 @@ public class RadioTest {
     public void shouldSetStation() {
         Radio radio = new Radio();
 
-        radio.currentStation = 1;
+        radio.setCurrentStation(1);
 
         int expected = 1;
         int actual = radio.getCurrentStation();
@@ -170,7 +170,19 @@ public class RadioTest {
     public void shouldSetStationSec() {
         Radio radio = new Radio();
 
-        radio.currentStation = 0;
+        radio.setCurrentStation(-1);
+
+        int expected = 0;
+        int actual = radio.getCurrentStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldSetStationThi() {
+        Radio radio = new Radio();
+
+        radio.setCurrentStation(10);
 
         int expected = 0;
         int actual = radio.getCurrentStation();

@@ -43,12 +43,13 @@ public class Radio {
     }
 
     public void setCurrentStation(int newCurrentStation) {
-        if (newCurrentStation > 0) {
-            currentStation = newCurrentStation;
+        if (newCurrentStation < 0) {
+            return;
         }
-        if (newCurrentStation < 9) {
-            currentStation = newCurrentStation;
-        } else return;
+        if (newCurrentStation > 9) {
+            return;
+        }
+        currentStation = newCurrentStation;
     }
 
     public void nextStation() {
